@@ -1,12 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Photo Feed</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <script src="app.js"></script> -->
+  <title>Instagram Photo Feed</title>
 </head>
+
 <body>
-    
+  <nav class="navbar bg-body-tertiary">
+    <!-- <div class="d-flex flex-row"> -->
+    <!-- <div class="col-6"> -->
+    <i class="h3 fa-brands fa-instagram m-1"></i>
+    <h3 class="d-flex m-1">Instagram</h3>
+    <!-- </div> -->
+    <div class="d-flex ms-auto m-1">
+      <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Create a new post</button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-2">
+                  <label for="message-text" class="col-form-label">Caption:</label>
+                  <textarea class="form-control" id="message-text" placeholder="Add the caption of your post here"></textarea>
+                </div>
+                <button type="button" class="btn btn-light"><i class="fa-solid fa-camera"></i></button>
+                <button type="button" class="btn btn-light"><i class="fa-solid fa-location-dot"></i></button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown m-1">
+        <button button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-white">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Accesibility</a></li>
+          <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- </div> -->
+  </nav>
+  <div class="container">
+    <div class="d-flex justify-content-center ">
+      <ul class="nav nav-pills m-3" id="pills-tab" role="tablist">
+        <li class="nav-item " role="presentation">
+          <button class="nav-link text-secondary" id="pills-grid-3x3-tab" data-bs-toggle="pill" data-bs-target="#pills-grid-3x3" type="button" role="tab" aria-controls="pills-grid-3x3" aria-selected="false"><i class="bi bi-grid-3x3"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active text-secondary" id="pills-square-fill-tab" data-bs-toggle="pill" data-bs-target="#pills-square-fill" type="button" role="tab" aria-controls="pills-square-fill" aria-selected="true"><i class="bi bi-square-fill"></i></button>
+        </li>
+      </ul>
+    </div>
+    <div class="justify-content-center mx-1">
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade" id="pills-grid-3x3" role="tabpanel" aria-labelledby="pills-grid-3x3-tab" tabindex="0">
+          <div class="d-flex flex-row">
+            <img src="https://picsum.photos/485/455" class="col-4 img-fluid rounded m-1 " alt="..." />
+            <img src="https://api.lorem.space/image/movie?w=485&h=455" class="col-4 img-fluid rounded m-1" alt="..." />
+            <img src="https://api.lorem.space/image/drink?w=485&h=455" class="col-4 img-fluid rounded m-1" alt="..." />
+          </div>
+          <div class="d-flex flex-row">
+            <img src="https://picsum.photos/485/455/?blur" class="col-4 img-fluid rounded m-1" alt="..." />
+            <img src="https://api.lorem.space/image/album?w=485&h=455" class="col-4 img-fluid rounded m-1" alt="..." />
+            <img src="https://api.lorem.space/image/face?w=485&h=455" class="col-4 img-fluid rounded m-1" alt="..." />
+          </div>
+          <div class="d-flex flex-row">
+            <img src="https://picsum.photos/485/455?grayscale" class="col-4 img-fluid rounded m-1" alt="..." />
+            <img src="https://api.lorem.space/image/fashion?w=485&h=455" class="col-4 img-fluid rounded m-1" alt="..." />
+            <img src="https://api.lorem.space/image/car?w=485&h=455" class="col-4 img-fluid rounded m-1" alt="..." />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="tab-pane fade show active" id="pills-square-fill" role="tabpanel" aria-labelledby="pills-square-fill-tab" tabindex="0">
+        <div class="row">
+          <div class="d-flex flex-column">
+            <div class="card m-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h4>Master photography #1 <span class="col float-end " id="date1">01/23</span></h4>
+                </li>
+                <img src="https://picsum.photos/1095/820" class="img-fluid" alt="..." />
+                <li class="list-group-item">
+                  <div class="d-flex flex-row ">
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-comment"></i>
+                    </div>
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-paper-plane"></i>
+                    </div>
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-thumbs-up"></i>
+                    </div>
+                    <div class="d-flex ms-auto p-1">
+                      <i class="h2 fa-regular fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <p class="pt-2 pb-2">Liked by <strong id="n1">Jack Ripper</strong>, <strong id="n2">Jane Doe</strong>,
+                    <strong id="n3">John Smith</strong> and <strong id="likes1">10,000</strong> <strong> others</strong>.
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptates dolorum ipsa harum
+                    porro enim dignissimos inventore laboriosam exercitationem esse sit, quam autem explicabo. Ut
+                    similique repellendus maiores veritatis totam at dicta mollitia adipisci laudantium eligendi! A
+                    recusandae ipsa quibusdam, sunt saepe voluptatum ex, explicabo ea hic unde, dolore odio?
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="card m-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h4>Master photography #2 <span class="col float-end" id="date2">04/26</span></h4>
+                </li>
+                <img src="https://picsum.photos/1095/820/?blur" class="img-fluid" alt="..." />
+                <li class="list-group-item">
+                  <div class="d-flex flex-row ">
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-comment"></i>
+                    </div>
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-paper-plane"></i>
+                    </div>
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-thumbs-up"></i>
+                    </div>
+                    <div class="d-flex ms-auto p-1">
+                      <i class="h2 fa-regular fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <p class="pt-2 pb-2">Liked by <strong id="n4">Jack Pipper</strong>, <strong id="n5">Jaz Jackson</strong>,
+                    <strong id="n6">Sam Smith</strong> and <strong id="likes2">100,000</strong> <strong> others</strong>.
+                  </p>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore hic iste facere ullam odit
+                    magni ratione repellat nam animi blanditiis odio quaerat aperiam error consequuntur reiciendis
+                    omnis deserunt, ea sequi ad atque saepe reprehenderit! Necessitatibus libero possimus maiores ad
+                    unde pariatur nobis itaque similique alias dolor accusamus, a saepe obcaecati, sit quo quisquam in
+                    aliquid sint neque iure eos exercitationem.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="card m-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h4>Master photography #3 <span class="col float-end" id="date3">12/7</span></h4>
+                </li>
+                <img src="https://picsum.photos/1095/820?grayscale" class="img-fluid" alt="..." />
+                <li class="list-group-item">
+                  <div class="d-flex flex-row ">
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-comment"></i>
+                    </div>
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-paper-plane"></i>
+                    </div>
+                    <div class="d-flex p-1">
+                      <i class="h2 fa-regular fa-thumbs-up"></i>
+                    </div>
+                    <div class="d-flex ms-auto p-1">
+                      <i class="h2 fa-regular fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <p class="pt-2 pb-2">Liked by <strong id="n7">Jackson North</strong>, <strong id="n8">Paul Peter</strong>,
+                    <strong id="n9">Tommy Brown</strong> and <strong id="likes3">1,000</strong> <strong> others</strong>.
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veniam neque debitis nulla culpa
+                    at voluptatem illum a eaque voluptates! Ut eaque corporis et architecto corrupti? Aspernatur quos
+                    quasi nobis vero omnis unde quaerat ipsam distinctio repellat enim repellendus eligendi, assumenda
+                    amet labore qui? Ipsa accusantium nisi, architecto mollitia assumenda vero accusamus consectetur
+                    consequuntur placeat sint! Cumque itaque laborum expedita iure, nemo numquam nostrum, recusandae
+                    adipisci doloribus, neque minima in!
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
